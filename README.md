@@ -15,6 +15,7 @@ write these commands to install necessary libraries and packages:
 - npm i tailwindcss @tailwindcss/vite
 - npm i react-router-dom
 - npm i react-toastify
+- npm i react-icons
 to run write this command:
 - npm run dev
 

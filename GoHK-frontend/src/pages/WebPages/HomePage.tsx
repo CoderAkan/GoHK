@@ -4,10 +4,11 @@ import Transportation from '../../components/Transportation';
 import Hotels from '../../components/Hotels';
 import Food from '../../components/Food';
 import VisitingPlaces from '../../components/VisitingPlaces';
+import { IoIosSearch } from "react-icons/io";
 
 const HomePage: FC = () => {
   const [currentStage, setCurrentStage] = useState(0);
-  const stages = ["esim", "transport", "hotel", "food", "visit_places"];
+  const stages = ["SIM & Octopus", "Transportation", "Hotels & Hostels", "Food", "Visit Places"];
 
   const next_stage = () => {
     setCurrentStage((currentStage + 1) % stages.length);
@@ -17,17 +18,50 @@ const HomePage: FC = () => {
     setCurrentStage((currentStage - 1) % stages.length);
   }
 
-  if (currentStage == 0) {
-    return <ESimAndOctopus />
-  } else if (currentStage == 1) {
-    return <Transportation />
-  } else if (currentStage == 2) {
-    return <Hotels />
-  } else if (currentStage == 3) {
-    return <Food />
-  } else if (currentStage == 4) {
-    return <VisitingPlaces />
+  const another_stage = (index: number) => {
+    setCurrentStage(index);
   }
+
+
+  return (
+    <div className='flex flex-col m-10 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1),0_4px_6px_-1px_rgba(0,0,0,0.1)] h-[90vh] rounded-lg border border-black/10'>
+      {/* Header */}
+      <div className='flex justify-between font-bold p-5'> 
+        <p className='ml-5 text-xl'>HK Trip Planner</p>
+        <IoIosSearch size={25}/>
+      </div>
+      <div className='flex h-full border-t border-black/10'>
+        {/* Left Side */}
+        <div className='w-2/10 py-5 border-r border-black/10'>
+          <div className='relative'>
+            <div className="absolute left-5 top-0  h-full w-px bg-gray-300 z-0" />
+            {stages.map((stage, index) => (
+              <div 
+                onClick={() => {another_stage(index)}}
+                key={index} 
+                className={`flex relative z-10 gap-x-3 p-2 py-4 ${index == currentStage ? 'bg-green-400/10 text-green-700 font-bold' : ''}`}
+              >
+                <div className="w-4 h-4 p-3 text-xs rounded-full font-normal bg-green-600 text-white flex items-center justify-center">{currentStage == index ? index+1 : ""}</div>
+                <div>{stage}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+        {/* Right Side */}
+        <div className='w-8/10 p-5'>
+          {
+            {
+              0: <ESimAndOctopus/>,
+              1: <Transportation/>,
+              2: <Hotels />,
+              3: <Food />,
+              4: <VisitingPlaces />
+            }[currentStage]
+          }
+        </div>
+      </div>
+    </div>
+  )
 }
 
 export default HomePage
