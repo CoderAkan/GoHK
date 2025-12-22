@@ -1,6 +1,6 @@
 import type {FC} from 'react'
 
-const transportation: FC = () => {
+const Transportation: FC = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const transportation: FC = () => {
   )
 }
 
-export default transportation
+export default Transportation

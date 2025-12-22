@@ -1,6 +1,6 @@
 import type {FC} from 'react'
 
-const eSimAndOctopus: FC = () => {
+const ESimAndOctopus: FC = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const eSimAndOctopus: FC = () => {
   )
 }
 
-export default eSimAndOctopus
+export default ESimAndOctopus
