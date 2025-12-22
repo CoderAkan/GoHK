@@ -1,6 +1,6 @@
 import {useState, type FC} from 'react'
-import ESimAndOctopus from '../../components/eSimAndOctopus';
-import Transportation from '../../components/transportation';
+import ESimAndOctopus from '../../components/ESimAndOctopus';
+import Transportation from '../../components/Transportation';
 import Hotels from '../../components/Hotels';
 import Food from '../../components/Food';
 import VisitingPlaces from '../../components/VisitingPlaces';
