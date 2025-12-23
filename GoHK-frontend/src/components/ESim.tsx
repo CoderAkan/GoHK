@@ -1,7 +1,7 @@
 import type {FC} from 'react'
-import sevenEleven from '../assets/711.png'
-import csl from '../assets/CSL.png'
-import chinaMobile from '../assets/chinaMobile.png'
+import sevenEleven from '../assets/companies/711.png'
+import csl from '../assets/companies/CSL.png'
+import chinaMobile from '../assets/companies/chinaMobile.png'
 
 
 
@@ -13,7 +13,7 @@ const ESimAndInternet: FC = () => {
           <div className='rounded-lg border-black/10 mt-3'>
             <div> {/* companies */}
               <div> {/* CSL */}
-                <div className='flex items-center gap-x-4 bg-amber-300/20 py-2 px-1 rounded-t-lg'>
+                <div className='flex shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1),0_4px_6px_-1px_rgba(0,0,0,0.1)] items-center gap-x-4 bg-amber-300/20 py-2 px-1 rounded-t-lg'>
                   <img src={csl} alt="" height={30} width={30} className='ml-3'/>
                   {/* <FaSimCard className='ml-3' size={25}/> */}
                   <p className='text-2xl'>CSL – “Discover Hong Kong Tourist SIM”</p>

@@ -16,6 +16,7 @@ write these commands to install necessary libraries and packages:
 - npm i react-router-dom
 - npm i react-toastify
 - npm i react-icons
+- npm i react-rating
 to run write this command:
 - npm run dev
 

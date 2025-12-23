@@ -1,10 +1,10 @@
 import type {FC} from 'react'
-import mtr from "../assets/mtr.svg"
-import bus from "../assets/bus.png"
-import tram from '../assets/tram.png'
-import taxi from '../assets/taxi.png'
-import ferry from '../assets/ferry.png'
-import train from '../assets/train.png'
+import mtr from "../assets/transport/mtr.svg"
+import bus from "../assets/transport/bus.png"
+import tram from '../assets/transport/tram.png'
+import taxi from '../assets/transport/taxi.png'
+import ferry from '../assets/transport/ferry.png'
+import train from '../assets/transport/train.png'
 
 const Transportation: FC = () => {
   return (
@@ -18,7 +18,7 @@ const Transportation: FC = () => {
               <div className='flex justify-between'>
                 <div className='flex flex-col w-1/2 mr-1'>
                   <div> {/* MTR (Mass Transit Railway) */}
-                    <div className='flex mt-3 items-center gap-x-3 bg-red-300/20 py-2 px-1 rounded-t-lg'>
+                    <div className='flex shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1),0_4px_6px_-1px_rgba(0,0,0,0.1)] mt-3 items-center gap-x-3 bg-red-300/20 py-2 px-1 rounded-t-lg'>
                       {/* <PiNumberSquareSevenLight className='ml-3' size={30}/> */}
                       <img src={mtr} className='ml-2' alt="" height={30} width={30} />
                       <p className='text-2xl'>MTR (Mass Transit Railway)</p>
@@ -55,7 +55,7 @@ const Transportation: FC = () => {
                     </div>
                   </div>
                   <div> {/* Trams */}
-                    <div className='flex mt-3 items-center gap-x-3 bg-blue-300/20 py-2 px-1 rounded-t-lg'>
+                    <div className='flex shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1),0_4px_6px_-1px_rgba(0,0,0,0.1)] mt-3 items-center gap-x-3 bg-blue-300/20 py-2 px-1 rounded-t-lg'>
                       <img src={tram} className='ml-2' alt="" height={30} width={30} />
                       <p className='text-2xl'>Trams (Ding Ding)</p>
                     </div>
@@ -91,7 +91,7 @@ const Transportation: FC = () => {
                     </div>
                   </div>
                   <div> {/* Ferries */}
-                    <div className='flex mt-3 items-center gap-x-3 bg-pink-300/20 py-2 px-1 rounded-t-lg'>
+                    <div className='flex shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1),0_4px_6px_-1px_rgba(0,0,0,0.1)] mt-3 items-center gap-x-3 bg-pink-300/20 py-2 px-1 rounded-t-lg'>
                       <img src={ferry} className='ml-2' alt="" height={30} width={30} />
                       <p className='text-2xl'>Ferries</p>
                     </div>
@@ -129,7 +129,7 @@ const Transportation: FC = () => {
                 </div>
                 <div className='flex flex-col w-1/2 mr-1'>
                   <div> {/* Public buses */}
-                    <div className='flex mt-3 items-center gap-x-3 bg-yellow-500/10 py-2 px-1 rounded-t-lg'>
+                    <div className='flex shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1),0_4px_6px_-1px_rgba(0,0,0,0.1)] mt-3 items-center gap-x-3 bg-yellow-500/10 py-2 px-1 rounded-t-lg'>
                       <img src={bus} className='ml-2' alt="" height={30} width={30} />
                       <p className='text-2xl'>Public buses</p>
                     </div>
@@ -164,7 +164,7 @@ const Transportation: FC = () => {
                     </div>
                   </div> 
                   <div> {/* Taxis */}
-                    <div className='flex mt-3 items-center gap-x-3 bg-green-500/10 py-2 px-1 rounded-t-lg'>
+                    <div className='flex shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1),0_4px_6px_-1px_rgba(0,0,0,0.1)] mt-3 items-center gap-x-3 bg-green-500/10 py-2 px-1 rounded-t-lg'>
                       <img src={taxi} className='ml-2' alt="" height={30} width={30} />
                       <p className='text-2xl'>Taxis</p>
                     </div>
@@ -193,7 +193,7 @@ const Transportation: FC = () => {
                     </div>
                   </div>
                   <div> {/* Airport Express */}
-                    <div className='flex mt-3 items-center gap-x-3 bg-cyan-500/10 py-2 px-1 rounded-t-lg'>
+                    <div className='flex shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1),0_4px_6px_-1px_rgba(0,0,0,0.1)] mt-3 items-center gap-x-3 bg-cyan-500/10 py-2 px-1 rounded-t-lg'>
                       <img src={train} className='ml-2' alt="" height={30} width={30} />
                       <p className='text-2xl'>Airport Express</p>
                     </div>

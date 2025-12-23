@@ -9,7 +9,7 @@ import { IoIosSearch } from "react-icons/io";
 
 const HomePage: FC = () => {
   const [currentStage, setCurrentStage] = useState(0);
-  const stages = ["SIM & Internet", "Octopus", "Transportation", "Hotels & Hostels", "Food", "Visit Places"];
+  const stages = ["SIM & Internet", "Octopus", "Transportation", "Accomodation", "Food", "Visit Places"];
 
   const next_stage = () => {
     setCurrentStage((currentStage + 1) % stages.length);
@@ -35,14 +35,14 @@ const HomePage: FC = () => {
         {/* Left Side */}
         <div className='w-2/10 py-5 border-r border-black/10'>
           <div className='relative'>
-            <div className="absolute left-5 top-0  h-full w-px bg-gray-300 z-0" />
+            <div className="absolute left-5 top-0 h-full w-px bg-gray-300 z-0" />
             {stages.map((stage, index) => (
               <div 
                 onClick={() => {another_stage(index)}}
                 key={index} 
                 className={`flex relative z-10 gap-x-3 p-2 py-4 ${index == currentStage ? 'bg-green-400/10 text-green-700 font-bold' : ''}`}
               >
-                <div className="w-4 h-4 p-3 text-xs rounded-full font-normal bg-green-600 text-white flex items-center justify-center">{currentStage == index ? index+1 : ""}</div>
+                <div className={`w-4 h-4 p-3 text-xs rounded-full font-normal ${index == currentStage ? 'bg-green-600 text-white' : 'bg-white border border-y-green-700 text-green-700'} flex items-center justify-center`}>{index+1}</div>
                 <div>{stage}</div>
               </div>
             ))}
