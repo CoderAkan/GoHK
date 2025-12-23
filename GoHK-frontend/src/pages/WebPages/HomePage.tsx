@@ -1,5 +1,6 @@
 import {useState, type FC} from 'react'
-import ESimAndOctopus from '../../components/ESimAndOctopus';
+import ESimAndInternet from '../../components/ESim';
+import Octopus from '../../components/Octopus';
 import Transportation from '../../components/Transportation';
 import Hotels from '../../components/Hotels';
 import Food from '../../components/Food';
@@ -8,7 +9,7 @@ import { IoIosSearch } from "react-icons/io";
 
 const HomePage: FC = () => {
   const [currentStage, setCurrentStage] = useState(0);
-  const stages = ["SIM & Octopus", "Transportation", "Hotels & Hostels", "Food", "Visit Places"];
+  const stages = ["SIM & Internet", "Octopus", "Transportation", "Hotels & Hostels", "Food", "Visit Places"];
 
   const next_stage = () => {
     setCurrentStage((currentStage + 1) % stages.length);
@@ -51,11 +52,12 @@ const HomePage: FC = () => {
         <div className='w-8/10 p-5'>
           {
             {
-              0: <ESimAndOctopus/>,
-              1: <Transportation/>,
-              2: <Hotels />,
-              3: <Food />,
-              4: <VisitingPlaces />
+              0: <ESimAndInternet/>,
+              1: <Octopus />,
+              2: <Transportation/>,
+              3: <Hotels />,
+              4: <Food />,
+              5: <VisitingPlaces />
             }[currentStage]
           }
         </div>
