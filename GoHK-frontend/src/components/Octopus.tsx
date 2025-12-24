@@ -32,7 +32,7 @@ const Octopus: FC = () => {
         </p>
 
         {/* Good to know box */}
-        <div className="mb-6 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1),0_4px_6px_-1px_rgba(0,0,0,0.1)] rounded-lg border border-blue-200 bg-blue-50 px-4 py-3">
+        <div className="mb-6 rounded-lg border border-blue-200 bg-blue-50 px-4 py-3">
           <p className="text-sm font-medium text-blue-900">Good to know</p>
           <ul className="mt-1 list-disc list-inside text-sm text-blue-800">
             <li>You can top up the Octopus Card with cash or card</li>
@@ -44,7 +44,7 @@ const Octopus: FC = () => {
           Places where you can get Octopus Card:
         </h1>
         {/* Convenience Stores */}
-        <div className="flex shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1),0_4px_6px_-1px_rgba(0,0,0,0.1)] flex-col border border-black/10 rounded-lg mb-2.5 pb-3">
+        <div className="flex flex-col border border-black/10 rounded-lg mb-2.5 pb-3">
           <div className="px-3 py-2 rounded-lg flex bg-green-200/50 w-full items-center">
             <FaCircleCheck size={20} className="mr-5 text-green-700" />
             <p className="text-sm font-medium">Convenience Stores</p>
@@ -65,7 +65,7 @@ const Octopus: FC = () => {
                 <p className="text-xs text-gray-500">
                   Source:{' '}
                   <a
-                    href="https://www.octopus.com.hk/en/consumer/octopus-cards/merchant-memberships/about/circlek.html"
+                    href="https://www.octopus.com.hk/en/consumer/octopus-cards/merchant-memberships/about/circlek.htmlgi"
                     target="_blank"
                     className="text-blue-600 hover:text-blue-900"
                   >
@@ -125,7 +125,7 @@ const Octopus: FC = () => {
         </div>
 
         {/* MTR */}
-        <div className="flex shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1),0_4px_6px_-1px_rgba(0,0,0,0.1)] flex-col border border-black/10 rounded-lg mb-2.5 pb-3">
+        <div className="flex flex-col border border-black/10 rounded-lg mb-2.5 pb-3">
           <div className="px-3 py-2 rounded-lg flex bg-green-200/50 w-full items-center">
             <FaCircleCheck size={20} className="mr-5 text-green-700" />
             <p className="text-sm font-medium">MTR (Airport Station)</p>
@@ -160,7 +160,7 @@ const Octopus: FC = () => {
         </div>
 
         {/* Exchange / Retail Counters */}
-        <div className="flex shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1),0_4px_6px_-1px_rgba(0,0,0,0.1)] flex-col border border-black/10 rounded-lg pb-3">
+        <div className="flex flex-col border border-black/10 rounded-lg pb-3">
           <div className="px-3 py-2 rounded-lg flex bg-green-200/50 w-full items-center">
             <FaCircleCheck size={20} className="mr-5 text-green-700" />
             <p className="text-sm font-medium">Exchange / Retail Counters</p>

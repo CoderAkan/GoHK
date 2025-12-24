@@ -20,7 +20,6 @@ export interface rest {
     price: number,
     cuisine: string
     halal: boolean,
-    dishes: string[],
     link_to_website: string,
     link_to_google_maps: string
 }
