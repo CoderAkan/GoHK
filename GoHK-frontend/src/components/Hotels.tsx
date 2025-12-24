@@ -45,7 +45,7 @@ const Hotels: FC = () => {
       price: 64,
       pros: [
         "Great Size & Facilities",
-        "Convenient transportation access location"
+        "Perfect transportation access location"
       ],
       link_to_website: "https://www.pandahotel.com.hk/",
       link_to_google_maps: "https://maps.app.goo.gl/QWp4YHLsYK3SfsGW9"
