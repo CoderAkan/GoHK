@@ -16,7 +16,7 @@ import enl from '../assets/accomodation/1331.png'
 import { IoLocationOutline } from "react-icons/io5";
 import { FaPlus } from "react-icons/fa";
 
-import { type accom } from '../Types/accomodation_rest_types';
+import { type accom } from '../Types/accomodation_rest_place_types';
 
 
 
