@@ -9,7 +9,7 @@ import { IoIosSearch } from "react-icons/io";
 
 const HomePage: FC = () => {
   const [currentStage, setCurrentStage] = useState(0);
-  const stages = ["SIM & Internet", "Octopus", "Transportation", "Accomodation", "Food", "Visit Places"];
+  const stages = ["SIM & Internet", "Octopus", "Transportation", "Accomodation", "Food", "Sights"];
 
   const next_stage = () => {
     setCurrentStage((currentStage + 1) % stages.length);
