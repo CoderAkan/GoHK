@@ -28,7 +28,7 @@ const Hotels: FC = () => {
       address: "Causeway Bay",
       description: "The Charterhouse Causeway Bay Hotel Hong Kong is an elegant hotel, conveniently located at the edge of Causeway Bay in Hong Kong Island",
       rating: 3.6,
-      price: 80,
+      price: 625,
       pros: [
         "Shopping & Nightlife",
         "Close to food spots and transports"
@@ -42,7 +42,7 @@ const Hotels: FC = () => {
       address: "Tsuen Wan",
       description: "The Charterhouse Causeway Bay Hotel Hong Kong is an elegant hotel, conveniently located at the edge of Causeway Bay in Hong Kong Island",
       rating: 4.15,
-      price: 64,
+      price: 500,
       pros: [
         "Great Size & Facilities",
         "Perfect transportation access location"
@@ -56,7 +56,7 @@ const Hotels: FC = () => {
       address: "Near Airport",
       description: "Regala Skycity Hotel at HKIA offers 1,208 rooms, restaurants, and direct access to AsiaWorld-Expo, 11 SKIES, and Macau.",
       rating: 4.35,
-      price: 115,
+      price: 895,
       pros: [
         "Well-equipped rooms",
         "Comfortable luxury"
@@ -70,7 +70,7 @@ const Hotels: FC = () => {
       address: "Tsim Sha Tsui",
       description: "The Empire Hotel Kowloon in Tsim Sha Tsui offers modern rooms, restaurants, harbor or city views, and convenient transport access.",
       rating: 4.5,
-      price: 121,
+      price: 945,
       pros: [
         "Unbeatable location",
         "Business-friendly facilities"
@@ -84,7 +84,7 @@ const Hotels: FC = () => {
       address: "Yau Tsim Mong District",
       description: "Budget-friendly hostel near Yau Ma Tei MTR, close to Mong Kok, ideal for solo travelers and convenient city access.",
       rating: 4.15,
-      price: 22,
+      price: 175,
       pros: [
         "Close to attractions",
         "Solo traveler friendly"
@@ -98,7 +98,7 @@ const Hotels: FC = () => {
       address: "North Point & Quarry Bay",
       description: "iclub Fortress Hill Hotel offers a modern stay near Fortress Hill and North Point, with easy access to Causeway Bay.",
       rating: 4.15,
-      price: 77,
+      price: 600,
       pros: [
         "Modern amenities",
         "Central location"
@@ -112,7 +112,7 @@ const Hotels: FC = () => {
       address: "Tsim Sha Tsui",
       description: "Four Seasons Hostel offers budget-friendly stays near Victoria Harbour, Avenue of Stars, and the vibrant, multicultural life of Chungking Mansions.",
       rating: 4.1,
-      price: 39,
+      price: 305,
       pros: [
         "Cleanliness and great staff",
         "Great location"
@@ -126,7 +126,7 @@ const Hotels: FC = () => {
       address: "Causeway Bay",
       description: "Sleep Cubee Hostel offers budget-friendly capsule accommodation in central Hong Kong, close to Ocean Park, Happy Valley, and Disneyland.",
       rating: 4.05,
-      price: 31,
+      price: 245,
       pros: [
         "Affordable capsule-style rooms",
         "Wi-Fi included"
@@ -140,7 +140,7 @@ const Hotels: FC = () => {
       address: "Tsim Sha Tsui",
       description: "Days Hostel in Tsim Sha Tsui offers comfortable, well-equipped rooms, Wi-Fi, and easy access to Hong Kong’s top attractions.",
       rating: 3.2,
-      price: 20,
+      price: 160,
       pros: [
         "Small and cozy",
         "Family-friendly facilities"
@@ -154,7 +154,7 @@ const Hotels: FC = () => {
       address: "Hung Hom",
       description: "Runway 1331, a large youth hostel on the former Kai Tak runway, offers creative, cultural, and recreational spaces for young travelers.",
       rating: 3.65,
-      price: 44,
+      price: 345,
       pros: [
         "Youth-focused ecosystem",
         "Spacious, furnished rooms"
@@ -174,7 +174,7 @@ const Hotels: FC = () => {
             <div> {/* list of hotels and hostels */}
               {hotelsAndHostels.map((hot, index) => (
                 <div key={index} className='flex mt-5 first:mt-0 border rounded-lg items-stretch border-black/10 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1),0_4px_6px_-1px_rgba(0,0,0,0.1)]'>
-                  <img className='rounded-l-lg' src={hot.image} alt="" height={150} width={350} />
+                  <img src={hot.image} alt="" className="w-[400px] h-[200px] object-cover rounded-l-lg flex-shrink-0" />
                   <div className='flex text-xs justify-between mb-4 flex-col mt-4 mx-10'>
                     <div className='flex justify-between items-end'>
                       <p className='font-medium text-xl'>{hot.name}</p>
@@ -207,7 +207,7 @@ const Hotels: FC = () => {
                         ))}
                       </div>
                       <div className='text-xl text-green-700'>
-                        ~{hot.price}+ USD
+                        {hot.price}+ HKD
                       </div>
                     </div>
                   </div>
