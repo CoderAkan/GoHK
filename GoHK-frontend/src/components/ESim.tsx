@@ -56,7 +56,7 @@ const ESimAndInternet: FC = () => {
                     <img src={sevenEleven} className='ml-3' width={30}/>
                     <p className='text-2xl'>7-Eleven Tourist SIM Cards</p>
                   </div>
-                  <div className='flex flex-col border-b border-x border-black/10 rounded-b-lg p-2'>
+                  <div className='flex flex-col justify-around border-b border-x border-black/10 rounded-b-lg p-2'>
                     <div className=' border-black/10'> {/* Left side */}
                       <p className='text-xl font-medium'>Where to buy:</p>
                       <ul className="list-disc pl-5">

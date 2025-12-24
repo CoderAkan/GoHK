@@ -16,10 +16,12 @@ import enl from '../assets/accomodation/1331.png'
 import { IoLocationOutline } from "react-icons/io5";
 import { FaPlus } from "react-icons/fa";
 
+import { type accom } from '../Types/accomodation_rest_types';
+
 
 
 const Hotels: FC = () => {
-  const hotelsAndHostels = [
+  const hotelsAndHostels: accom[] = [
     {
       image: chatterhouse,
       name: "Chatterhouse Hotel",
@@ -31,7 +33,8 @@ const Hotels: FC = () => {
         "Shopping & Nightlife",
         "Close to food spots and transports"
       ],
-      link_to_website: "https://www.charterhouse.com/"
+      link_to_website: "https://www.charterhouse.com/",
+      link_to_google_maps: "https://maps.app.goo.gl/oxTfniJUeJm1s4YBA"
     },
     {
       image: panda,
@@ -44,7 +47,8 @@ const Hotels: FC = () => {
         "Great Size & Facilities",
         "Convenient transportation access location"
       ],
-      link_to_website: "https://www.pandahotel.com.hk/"
+      link_to_website: "https://www.pandahotel.com.hk/",
+      link_to_google_maps: "https://maps.app.goo.gl/QWp4YHLsYK3SfsGW9"
     },
     {
       image: regala,
@@ -57,7 +61,8 @@ const Hotels: FC = () => {
         "Well-equipped rooms",
         "Comfortable luxury"
       ],
-      link_to_website: "https://www.regala-hotels.com/en/regala-skycity-hotel"
+      link_to_website: "https://www.regala-hotels.com/en/regala-skycity-hotel",
+      link_to_google_maps: "https://maps.app.goo.gl/MDvh8BWFdEr9Z74D9"
     },
     {
       image: tstHotel,
@@ -70,7 +75,8 @@ const Hotels: FC = () => {
         "Unbeatable location",
         "Business-friendly facilities"
       ],
-      link_to_website: "https://www.empirehotel.com.hk/en/hotel/empire-hotel-hong-kong-tsim-sha-tsui/about"
+      link_to_website: "https://www.empirehotel.com.hk/en/hotel/empire-hotel-hong-kong-tsim-sha-tsui/about",
+      link_to_google_maps: "https://maps.app.goo.gl/ZKsagJexRHPHu419A"
     },
     {
       image: yHostel,
@@ -83,7 +89,8 @@ const Hotels: FC = () => {
         "Close to attractions",
         "Solo traveler friendly"
       ],
-      link_to_website: "https://yesinn.hotelhk.cn/en"
+      link_to_website: "https://yesinn.hotelhk.cn/en",
+      link_to_google_maps: "https://maps.app.goo.gl/mXRfe3Ce81GbM58k7"
     },
     {
       image: iclub,
@@ -96,7 +103,8 @@ const Hotels: FC = () => {
         "Modern amenities",
         "Central location"
       ],
-      link_to_website: "https://www.iclub-hotels.com/en/iclub-fortress-hill-hotel"
+      link_to_website: "https://www.iclub-hotels.com/en/iclub-fortress-hill-hotel",
+      link_to_google_maps: "https://maps.app.goo.gl/y4QSoQgBaoXNh22V7"
     },
     {
       image: fourSeasons,
@@ -109,7 +117,8 @@ const Hotels: FC = () => {
         "Cleanliness and great staff",
         "Great location"
       ],
-      link_to_website: "https://four-seasons-hostel.hongkonghotelsandrates.com/en/"
+      link_to_website: "https://four-seasons-hostel.hongkonghotelsandrates.com/en/",
+      link_to_google_maps: "https://maps.app.goo.gl/GevtUxQwQsVf18Yu5"
     },
     {
       image: cubee,
@@ -122,7 +131,8 @@ const Hotels: FC = () => {
         "Affordable capsule-style rooms",
         "Wi-Fi included"
       ],
-      link_to_website: "https://www.guestreservations.com/sleep-cubee-hostel/booking?utm_source=google&utm_medium=cpc&utm_campaign=22108216032&gad_source=1&gad_campaignid=22108216032&gbraid=0AAAAADiMQMblUu2SbNcz-TCQoCIMHa6UQ"
+      link_to_website: "https://www.guestreservations.com/sleep-cubee-hostel/booking?utm_source=google&utm_medium=cpc&utm_campaign=22108216032&gad_source=1&gad_campaignid=22108216032&gbraid=0AAAAADiMQMblUu2SbNcz-TCQoCIMHa6UQ",
+      link_to_google_maps: "https://maps.app.goo.gl/cnRsNyRv2Vf7hsai6"
     },
     {
       image: days,
@@ -135,7 +145,8 @@ const Hotels: FC = () => {
         "Small and cozy",
         "Family-friendly facilities"
       ],
-      link_to_website: "https://days.hongkonghotelsandrates.com/nl/"
+      link_to_website: "https://days.hongkonghotelsandrates.com/nl/",
+      link_to_google_maps: "https://maps.app.goo.gl/VX2MJtcaqEfPJ6pf8"
     },
     {
       image: enl,
@@ -148,7 +159,8 @@ const Hotels: FC = () => {
         "Youth-focused ecosystem",
         "Spacious, furnished rooms"
       ],
-      link_to_website: "https://runwayenlight.hotelsofhongkong.com/en/"
+      link_to_website: "https://runwayenlight.hotelsofhongkong.com/en/",
+      link_to_google_maps: "https://maps.app.goo.gl/ZiVwKK7722oCZ3xK9"
     },
   ];
   return (
@@ -181,10 +193,12 @@ const Hotels: FC = () => {
                     </div>
                     <div className='flex justify-between mt-3'>
                       <div className='flex gap-x-4 items-center flex-wrap'>
-                        <div className='flex gap-x-1 text-red-700 items-center'>
-                          <IoLocationOutline size={15} />
-                          {hot.address}
-                        </div>
+                        <a target='_blank' href={hot.link_to_google_maps}>
+                          <div className='flex gap-x-1 text-red-700 items-center'>
+                            <IoLocationOutline size={15} />
+                            {hot.address}
+                          </div>
+                        </a>
                         {hot.pros.map((pro, index) => (
                           <div key={index} className='flex items-center gap-x-1 text-green-700'>
                             <FaPlus size={10} />
