@@ -29,7 +29,7 @@ export interface place {
     description: string,
     image: string,
     location: string,
-    type: "Nature" | "City" | "Sports" | "Art" | "Attractions",
+    type: "Nature" | "City" | "Sports" | "Art" | "Attractions" | "Spiritual",
     link_to_google_maps: string,
     rating: number,
     nearby_mtr_station: string,

@@ -12,6 +12,12 @@ import happyValley from "../assets/places/happyValley.jpg"
 import disneyland from "../assets/places/disneyland.jpg"
 import ladies from '../assets/places/LadiesMarket.jpeg'
 import lionRock from '../assets/places/lionRock.jpg'
+import saiKung from '../assets/places/saiKung.jpg'
+import poLin from '../assets/places/poLin.jpeg'
+import hkSpace from '../assets/places/hkSpace.jpg'
+import kowloonPark from '../assets/places/kowloonPark.png'
+import che from "../assets/places/che.webp"
+import times from "../assets/places/times.jpg"
 
 import ReactStars from 'react-stars'
 import { IoLocationOutline } from 'react-icons/io5'
@@ -114,6 +120,78 @@ const VisitingPlaces: FC = () => {
       entry_fee: "Free",
       link_to_website: "https://www.discoverhongkong.com/uk/interactive-map/lion-rock-country-park.html",
     },
+    {
+      name: "Sai Kung",
+      description: "Sai Kung is a coastal district known for pristine beaches, scenic hiking trails, volcanic landscapes, seafood villages, and clear blue waters.",
+      image: saiKung,
+      location: "Sai Kung",
+      type: "Nature",
+      link_to_google_maps: "https://maps.app.goo.gl/PQFjguM5SnE2ytJP8",
+      rating: 4.4,
+      nearby_mtr_station: "No MTR",
+      entry_fee: "Free",
+      link_to_website: "https://www.discoverhongkong.com/eng/explore/neighbourhoods/sai-kung.html",
+    },
+    {
+      name: "Po Lin Monastery",
+      description: "Po Lin Monastery on Lantau Island is a peaceful Buddhist complex, home to the iconic Tian Tan Buddha statue.",
+      image: poLin,
+      location: "Lantau Island",
+      type: "Spiritual",
+      link_to_google_maps: "https://maps.app.goo.gl/upmgDGpmUEDsSssd9",
+      rating: 4.5,
+      nearby_mtr_station: "No MTR",
+      entry_fee: "Free",
+      link_to_website: "https://www.plm.org.hk/eng/home.php",
+    },
+    {
+      name: "Hong Kong Space Museum",
+      description: "Hong Kong Space Museum showcases interactive exhibits, planetarium shows, space science, astronomy, and educational experiences overlooking Victoria Harbour for families.",
+      image: hkSpace,
+      location: "Tsim Sha Tsui",
+      type: "Art",
+      link_to_google_maps: "https://maps.app.goo.gl/Qg51X9Q5yuPaU6oE8",
+      rating: 4.2,
+      nearby_mtr_station: "Tsim Sha Tsui",
+      entry_fee: "$10 HKD",
+      link_to_website: "https://hk.space.museum/en/web/spm/home.html",
+    },
+    {
+      name: "Kowloon Park",
+      description: "Kowloon Park transformed from former military barracks into a peaceful urban green space, offering nature, culture, and relaxation in busy Tsim Sha Tsui.",
+      image: kowloonPark,
+      location: "Tsim Sha Tsui",
+      type: "Nature",
+      link_to_google_maps: "https://maps.app.goo.gl/aeeFaaSmNR29HdA19",
+      rating: 4.4,
+      nearby_mtr_station: "Tsim Sha Tsui",
+      entry_fee: "Free",
+      link_to_website: "https://www.lcsd.gov.hk/en/parks/kp/",
+    },
+    {
+      name: "Sha Tin Che Kung Temple",
+      description: "Sha Tin Che Kung Temple is a historic Taoist temple famous for worshipping Che Kung and spinning windmills for good fortune.",
+      image: che,
+      location: "Sha Tin",
+      type: "Spiritual",
+      link_to_google_maps: "https://maps.app.goo.gl/iUcVmYPm8jrWmq5Z9",
+      rating: 4.4,
+      nearby_mtr_station: "Che Kung Temple",
+      entry_fee: "Free",
+      link_to_website: "https://www.ctc.org.hk/en/temple/%E6%B2%99%E7%94%B0%E8%BB%8A%E5%85%AC%E5%BB%9F/",
+    },
+    {
+      name: "Times Square",
+      description: "Times Square in Causeway Bay is a lively shopping complex featuring international brands, dining, events, and vibrant urban atmosphere.",
+      image: times,
+      location: "Causweway Bay",
+      type: "City",
+      link_to_google_maps: "https://maps.app.goo.gl/t7syP2Yckp121ST39?g_st=ipc",
+      rating: 4.1,
+      nearby_mtr_station: "Causeway Bay",
+      entry_fee: "Free",
+      link_to_website: "https://timessquare.com.hk/",
+    },
   ]
 
   return (
@@ -152,6 +230,7 @@ const VisitingPlaces: FC = () => {
                           place.type === 'Art'    ? 'text-red-500' :
                           place.type === 'Sports' ? 'text-yellow-500' :
                           place.type === "Attractions" ? 'text-cyan-500' :
+                          place.type === "Spiritual" ? 'text-indigo-500' :
                           'text-gray-500'
                         }`}>
                         <a target='_blank' href={place.link_to_google_maps}>

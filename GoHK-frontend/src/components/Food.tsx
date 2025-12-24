@@ -96,7 +96,7 @@ const Food: FC = () => {
       address: "Central",
       rating: 4.6,
       price: 2000,
-      cuisine: "Modern French fine dining",
+      cuisine: "Modern French",
       halal: false,
       link_to_website: "https://www.mandarinoriental.com/en/hong-kong/the-landmark/dine/amber",
       link_to_google_maps: "https://maps.app.goo.gl/i3a7QnWFwadjAPhm9"
@@ -120,7 +120,7 @@ const Food: FC = () => {
       address: "Central",
       rating: 4.1,
       price: 100,
-      cuisine: "Cantonese dim sum",
+      cuisine: "Cantonese",
       halal: false,
       link_to_website: "https://www.timhowan.com/",
       link_to_google_maps: "https://maps.app.goo.gl/qj3ihFdgArT7h2oy9"
@@ -133,7 +133,7 @@ const Food: FC = () => {
       rating: 4.7,
       price: 150,
       cuisine: "Central Asian",
-      halal: false,
+      halal: true,
       link_to_website: "https://yurthk.com/",
       link_to_google_maps: "https://maps.app.goo.gl/Wtd21p9Bnv4Vyq1V8"
     }
