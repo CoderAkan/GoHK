@@ -22,7 +22,8 @@ const Food: FC = () => {
         "",
         ""
       ],
-      link_to_website: ""
+      link_to_website: "",
+      link_to_google_maps: ""
     }
   ];
   return (
