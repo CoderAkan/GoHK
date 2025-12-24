@@ -1,14 +1,20 @@
 import type {FC} from 'react'
 import ReactStars from "react-stars";
+import { LuChefHat } from "react-icons/lu";
+
 
 import { IoLocationOutline } from "react-icons/io5";
 import { type rest } from '../Types/accomodation_rest_place_types';
 import dicos from '../assets/Food/dicos.jpeg'
 import ICC from "../assets/Food/IslamCentreCanteen.jpeg"
-import Ebik from "../assets/Food/ebeneezers.jpeg"
+import Ebik from "../assets/Food/Снимок экрана 2025-12-24 в 19.13.27.png"
 import waikee from "../assets/Food/wai-kee-1920x1080-b.jpg"
 import pakeeza from "../assets/Food/pakeeza.jpeg"
 import ifink from "../assets/Food/islam-food-in-kowloon.jpg"
+import amber from "../assets/Food/amber-restaurant.jpg"
+import mott from "../assets/Food/mott-32-hong-kong-is.jpg"
+import timhowan from "../assets/Food/20180904-165134-largejpg.jpg"
+import yurt from "../assets/Food/Снимок экрана 2025-12-24 в 19.53.42.png"
 const Food: FC = () => {
   const restaurants: rest[] = [
     {
@@ -42,7 +48,7 @@ const Food: FC = () => {
       address: "Central",
       rating: 4.9,
       price: 150,
-      cuisine: "",
+      cuisine: "South Asian",
       halal: true,
       link_to_website: "https://www.foodpanda.hk/restaurant/s9fk/ebeneezers-kebabs-and-pizzeria-central",
       link_to_google_maps: "https://maps.app.goo.gl/fWoi2QbBf1GWHybB9"
@@ -54,7 +60,7 @@ const Food: FC = () => {
       address: "Wan Chai",
       rating: 3.7,
       price: 50,
-      cuisine: "Halal Cantonese cuisine",
+      cuisine: "Cantonese",
       halal: true,
       link_to_website: "https://www.foodpanda.hk/restaurant/zqzc/wai-kee-food",
       link_to_google_maps: "https://maps.app.goo.gl/8bkcp3Sn1VSvLySY6"
@@ -66,7 +72,7 @@ const Food: FC = () => {
       address: "Tsim Sha Tsui",
       rating: 5,
       price: 150,
-      cuisine: "Pakistani and North Indian cuisine",
+      cuisine: "South Asian",
       halal: true,
       link_to_website: "https://www.foodpanda.hk/restaurant/xmio/pakeeza-food-restaurant",
       link_to_google_maps: "https://maps.app.goo.gl/u81GHPtFWsKeZgCt9"
@@ -78,58 +84,58 @@ const Food: FC = () => {
       address: "Kowloon City",
       rating: 4.1,
       price: 125,
-      cuisine: "Halal Asian / Hong Kong-style Chinese food",
+      cuisine: "Chinese",
       halal: true,
       link_to_website: "https://www.tripadvisor.co.uk/Restaurant_Review-g294217-d799850-Reviews-Islam_Food-Hong_Kong.html",
       link_to_google_maps: "https://maps.app.goo.gl/AkNYyJrjtzXdwPRd6"
     },
     {
-      image: ifink,
-      name: "",
-      description: "",
-      address: "",
-      rating: 0,
-      price: 0,
-      cuisine: "",
+      image: amber,
+      name: "Amber restaurant",
+      description: "Amber in Hong Kong is a Michelin-starred restaurant by Richard Ekkebus, renowned for refined French cuisine with modern, sustainable philosophy",
+      address: "Central",
+      rating: 4.6,
+      price: 2000,
+      cuisine: "Modern French fine dining",
       halal: false,
-      link_to_website: "",
-      link_to_google_maps: ""
+      link_to_website: "https://www.mandarinoriental.com/en/hong-kong/the-landmark/dine/amber",
+      link_to_google_maps: "https://maps.app.goo.gl/i3a7QnWFwadjAPhm9"
     },
     {
-      image:ifink ,
-      name: "",
-      description: "",
-      address: "",
-      rating: 0,
-      price: 0,
-      cuisine: "",
+      image: mott,
+      name: "Mott 32",
+      description: "Upscale modern Cantonese cuisine featuring signature Peking duck, refined dim sum, premium meats, regional Chinese influences, and elegant fine-dining atmosphere",
+      address: "Central",
+      rating: 4.5,
+      price: 300,
+      cuisine: "Modern Cantonese",
       halal: false,
-      link_to_website: "",
-      link_to_google_maps: ""
+      link_to_website: "https://mott32.com/",
+      link_to_google_maps: "https://maps.app.goo.gl/fQUKXFBDx5ZRy1M87"
     },
     {
-      image: ifink,
-      name: "",
-      description: "",
-      address: "",
-      rating: 0,
-      price: 0,
-      cuisine: "",
+      image: timhowan,
+      name: "Tim Ho Wan",
+      description: "Tim Ho Wan is a Hong Kong dim sum restaurant, known for affordable Michelin-starred dishes like baked barbecue pork buns",
+      address: "Central",
+      rating: 4.1,
+      price: 100,
+      cuisine: "Cantonese dim sum",
       halal: false,
-      link_to_website: "",
-      link_to_google_maps: ""
+      link_to_website: "https://www.timhowan.com/",
+      link_to_google_maps: "https://maps.app.goo.gl/qj3ihFdgArT7h2oy9"
     },
     {
-      image: ifink,
-      name: "",
-      description: "",
-      address: "",
-      rating: 0,
-      price: 0,
-      cuisine: "",
+      image: yurt,
+      name: "Yurt",
+      description: "Yurt is a Hong Kong restaurant serving creative modern Central Asian cuisine with bold flavors, interiors, and a lively dining atmosphere",
+      address: "Central",
+      rating: 4.7,
+      price: 150,
+      cuisine: "Central Asian",
       halal: false,
-      link_to_website: "",
-      link_to_google_maps: ""
+      link_to_website: "https://yurthk.com/",
+      link_to_google_maps: "https://maps.app.goo.gl/Wtd21p9Bnv4Vyq1V8"
     }
   ];
   return (
@@ -161,16 +167,25 @@ const Food: FC = () => {
                       <p className='text-lg ml-2 font-medium'>{rest.rating}</p>
                     </div>
                     <div className='flex justify-between mt-3'>
-                      <div className='flex gap-x-4 items-center flex-wrap'>
-                        <a target='_blank' href={rest.link_to_google_maps}>
-                          <div className='flex gap-x-1 text-red-700 items-center'>
-                            <IoLocationOutline size={15} />
-                            {rest.address}
-                          </div>
-                        </a>
+                      <div className='flex items-center justify-between w-3/4 gap-x-2'>
+                        <div className='flex gap-x-4 items-center flex-wrap'>
+                          <a target='_blank' href={rest.link_to_google_maps}>
+                            <div className='flex gap-x-1 text-red-700 items-center'>
+                              <IoLocationOutline size={15} />
+                              {rest.address}
+                            </div>
+                          </a>
+                        </div>
+                        <div className='flex gap-x-1 items-center w-1/2'>
+                          <LuChefHat size={15} />
+                          {rest.cuisine} cuisine
+                        </div>
+                        <div className='text-green-700'>
+                          {rest.halal ? "Halal-friendly" : ""}
+                        </div>
                       </div>
                       <div className='text-xl text-green-700'>
-                        ~{rest.price}+ USD
+                        {rest.price}+ HKD
                       </div>
                     </div>
                   </div>
