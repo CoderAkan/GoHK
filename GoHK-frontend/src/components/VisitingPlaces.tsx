@@ -5,6 +5,8 @@ import { SiMtr } from "react-icons/si";
 
 
 import victoriaPeak from "../assets/places/victoriaPeak.jpeg"
+import avenuesOfStars from "../assets/places/avenueOfStars.jpeg"
+
 import ReactStars from 'react-stars'
 import { IoLocationOutline } from 'react-icons/io5'
 import { FaPlus } from 'react-icons/fa6'
@@ -22,7 +24,79 @@ const VisitingPlaces: FC = () => {
       nearby_mtr_station: "Central",
       entry_fee: "Free",
       link_to_website: "https://www.hk-victoria-peak.com/",
-    }
+    },
+    {
+      name: "Avenue of Stars",
+      description: "Avenue of the Stars celebrates Hong Kong’s film industry, offering harbor views, celebrity handprints, and scenic waterfront strolls.",
+      image: avenuesOfStars,
+      location: "Tsim Sha Tsui",
+      type: "City",
+      link_to_google_maps: "https://share.google/k64eSLgLJnZaAqmOw",
+      rating: 4.3,
+      nearby_mtr_station: "East Tsim Sha Tsui",
+      entry_fee: "Free",
+      link_to_website: "https://www.avenueofstars.com.hk/",
+    },
+    {
+      name: "Victoria Harbour",
+      description: "Victoria Peak offers breathtaking panoramic views of Hong Kong’s skyline, Victoria Harbour, and surrounding islands, especially stunning at sunset.",
+      image: victoriaPeak,
+      location: "Hong Kong Island",
+      type: "Nature",
+      link_to_google_maps: "https://share.google/n5ENw2ys8cAXPMBC2",
+      rating: 4.6,
+      nearby_mtr_station: "Central",
+      entry_fee: "Free",
+      link_to_website: "https://www.hk-victoria-peak.com/",
+    },
+    {
+      name: "Chungking Mansions",
+      description: "Victoria Peak offers breathtaking panoramic views of Hong Kong’s skyline, Victoria Harbour, and surrounding islands, especially stunning at sunset.",
+      image: victoriaPeak,
+      location: "Hong Kong Island",
+      type: "Nature",
+      link_to_google_maps: "https://share.google/n5ENw2ys8cAXPMBC2",
+      rating: 4.6,
+      nearby_mtr_station: "Central",
+      entry_fee: "Free",
+      link_to_website: "https://www.hk-victoria-peak.com/",
+    },
+    {
+      name: "Ocean Park",
+      description: "Victoria Peak offers breathtaking panoramic views of Hong Kong’s skyline, Victoria Harbour, and surrounding islands, especially stunning at sunset.",
+      image: victoriaPeak,
+      location: "Hong Kong Island",
+      type: "Nature",
+      link_to_google_maps: "https://share.google/n5ENw2ys8cAXPMBC2",
+      rating: 4.6,
+      nearby_mtr_station: "Central",
+      entry_fee: "Free",
+      link_to_website: "https://www.hk-victoria-peak.com/",
+    },
+    {
+      name: "Happy Valley",
+      description: "Victoria Peak offers breathtaking panoramic views of Hong Kong’s skyline, Victoria Harbour, and surrounding islands, especially stunning at sunset.",
+      image: victoriaPeak,
+      location: "Hong Kong Island",
+      type: "Nature",
+      link_to_google_maps: "https://share.google/n5ENw2ys8cAXPMBC2",
+      rating: 4.6,
+      nearby_mtr_station: "Central",
+      entry_fee: "Free",
+      link_to_website: "https://www.hk-victoria-peak.com/",
+    },
+    {
+      name: "Disneyland",
+      description: "Victoria Peak offers breathtaking panoramic views of Hong Kong’s skyline, Victoria Harbour, and surrounding islands, especially stunning at sunset.",
+      image: victoriaPeak,
+      location: "Hong Kong Island",
+      type: "Nature",
+      link_to_google_maps: "https://share.google/n5ENw2ys8cAXPMBC2",
+      rating: 4.6,
+      nearby_mtr_station: "Central",
+      entry_fee: "Free",
+      link_to_website: "https://www.hk-victoria-peak.com/",
+    },
   ]
 
   return (
@@ -54,9 +128,16 @@ const VisitingPlaces: FC = () => {
                       <p className='text-lg ml-2 font-medium'>{place.rating}</p>
                     </div>
                     <div className='flex justify-between mt-3'>
-                      <div className='flex gap-x-4 items-center flex-wrap'>
+                      <div 
+                        className={`flex gap-x-4 items-center flex-wrap ${
+                          place.type === 'Nature' ? 'text-green-500' :
+                          place.type === 'City'   ? 'text-blue-500' :
+                          place.type === 'Art'    ? 'text-red-500' :
+                          place.type === 'Sports' ? 'text-yellow-500' :
+                          'text-gray-500'
+                        }`}>
                         <a target='_blank' href={place.link_to_google_maps}>
-                          <div className='flex gap-x-1 text-red-700 items-center'>
+                          <div className='flex gap-x-1 items-center'>
                             <IoLocationOutline size={15} />
                             {place.location}
                           </div>
@@ -64,9 +145,6 @@ const VisitingPlaces: FC = () => {
                         <div key={index} className='flex items-center gap-x-1'>
                             <SiMtr size={15} />
                             {place.nearby_mtr_station}
-                        </div>
-                        <div key={index} className='flex items-center gap-x-1'>
-                            <SiMtr size={15} className="" />
                         </div>
                       </div>
                       <div className='text-xl text-green-700'>
