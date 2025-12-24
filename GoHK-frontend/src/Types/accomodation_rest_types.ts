@@ -24,3 +24,7 @@ export interface rest {
     link_to_website: string,
     link_to_google_maps: string
 }
+
+export interface place {
+    
+}
