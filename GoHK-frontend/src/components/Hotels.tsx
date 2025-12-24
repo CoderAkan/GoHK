@@ -166,9 +166,9 @@ const Hotels: FC = () => {
   return (
     <div className='p-1 h-[70vh] overflow-y-auto'>
       <div className='w-99/100'>
-        <div className='text-xl font-semibold border-b pb-3 border-black/10'>Accomodation</div>
+        <div className='text-xl font-semibold border-b pb-3 border-black/10'>Your Perfect Stay Awaits</div>
           <p className="mt-1 text-sm text-gray-600">
-            Here are both hotels and hostels: 
+            Here are hotels and hostels to suit every style and budget: 
           </p>
           <div className='rounded-lg border-black/10 mt-3'>
             <div> {/* list of hotels and hostels */}

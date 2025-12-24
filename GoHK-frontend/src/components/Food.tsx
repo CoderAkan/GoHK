@@ -141,9 +141,9 @@ const Food: FC = () => {
   return (
     <div className='p-1 h-[70vh] overflow-y-auto'>
       <div className='w-99/100'>
-        <div className='text-xl font-semibold border-b pb-3 border-black/10'>Accomodation</div>
+        <div className='text-xl font-semibold border-b pb-3 border-black/10'>Must-Try Spots</div>
           <p className="mt-1 text-sm text-gray-600">
-            Here are both hotels and hostels: 
+            Discover irresistible flavors, where bold tastes, fresh ingredients, and delicious experiences await every food lover: 
           </p>
           <div className='rounded-lg border-black/10 mt-3'>
             <div> {/* list of hotels and hostels */}
