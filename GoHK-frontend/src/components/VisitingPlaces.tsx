@@ -201,6 +201,14 @@ const VisitingPlaces: FC = () => {
           <p className="mt-1 text-sm text-gray-600">
           Discover Hong Kong’s iconic spots, where unforgettable views, vibrant culture, and thrilling experiences await every traveler: 
           </p>
+          <div className="mt-4 mb-4 rounded-lg border border-blue-200 bg-blue-50 px-4 py-3">
+            <p className="text-sm font-medium text-blue-900">Good to know</p>
+            <ul className="mt-1 list-disc list-inside text-sm text-blue-800">
+              <li>You can download "MTR Mobile", "Citymapper", "Google Maps" for navigation</li>
+              <li>Always bring cash with yourself</li>
+              <li>You can ask Customer Service Center in any MTR station for assistance</li>
+            </ul>
+          </div>
           <div className='rounded-lg border-black/10 mt-3'>
             <div> {/* list of hotels and hostels */}
               {places.map((place, index) => (
