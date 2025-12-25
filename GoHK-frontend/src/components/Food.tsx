@@ -149,7 +149,7 @@ const Food: FC = () => {
             <div> {/* list of hotels and hostels */}
               {restaurants.map((rest, index) => (
                 <div key={index} className='flex mt-5 first:mt-0 border rounded-lg items-stretch border-black/10 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1),0_4px_6px_-1px_rgba(0,0,0,0.1)]'>
-                  <img src={rest.image} alt="" className="w-[400px] h-[200px] object-cover rounded-l-lg flex-shrink-0" />
+                  <img src={rest.image} alt="" className="w-100 h-50 object-cover rounded-l-lg shrink-0" />
                   <div className='flex text-xs justify-between mb-4 flex-col mt-4 mx-10'>
                     <div className='flex justify-between items-end'>
                       <p className='font-medium text-xl'>{rest.name}</p>
