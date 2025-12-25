@@ -206,7 +206,7 @@ const Hotels: FC = () => {
                           </div>
                         ))}
                       </div>
-                      <div className='text-xl text-green-700'>
+                      <div className='text-lg text-green-700'>
                         {hot.price}+ HKD
                       </div>
                     </div>
