@@ -11,13 +11,13 @@ const HomePage: FC = () => {
   const [currentStage, setCurrentStage] = useState(0);
   const stages = ["SIM & Internet", "Octopus", "Transportation", "Accomodation", "Food", "Sights"];
 
-  const next_stage = () => {
-    setCurrentStage((currentStage + 1) % stages.length);
-  }
+  // const next_stage = () => {
+  //   setCurrentStage((currentStage + 1) % stages.length);
+  // }
 
-  const previous_stage = () => {
-    setCurrentStage((currentStage - 1) % stages.length);
-  }
+  // const previous_stage = () => {
+  //   setCurrentStage((currentStage - 1) % stages.length);
+  // }
 
   const another_stage = (index: number) => {
     setCurrentStage(index);
