@@ -14,9 +14,10 @@ import waikee from "../assets/Food/wai-kee-1920x1080-b.jpg"
 import pakeeza from "../assets/Food/pakeeza.jpeg"
 import ifink from "../assets/Food/islam-food-in-kowloon.jpg"
 import amber from "../assets/Food/amber-restaurant.jpg"
+
 import mott from "../assets/Food/mott-32-hong-kong-is.jpg"
 import timhowan from "../assets/Food/20180904-165134-largejpg.jpg"
-import yurt from "../assets/Food/Снимок экрана 2025-12-24 в 19.53.42.png"
+import yurt from "../assets/Food/yurt.png"
 const Food: FC = () => {
   const restaurants: rest[] = [
     {
@@ -151,7 +152,7 @@ const Food: FC = () => {
             <div> {/* list of hotels and hostels */}
               {restaurants.map((rest, index) => (
                 <div key={index} className='flex flex-col min-[1300px]:flex-row mt-5 first:mt-0 border rounded-lg items-stretch border-black/10 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1),0_4px_6px_-1px_rgba(0,0,0,0.1)]'>
-                  <img src={rest.image} alt="" className="w-full min-[1300px]:w-100 object-cover rounded-l-lg shrink-0" />
+                  <img src={rest.image} alt="" className="w-full min-[1300px]:w-100 min-[1300px]:h-50 object-cover rounded-l-lg shrink-0" />
                   <div className='flex text-xs justify-between mb-4 flex-col mt-4 mx-4 lg:mx-10'>
                     <div className='flex flex-col lg:flex-row justify-start lg:justify-between items-start lg:items-end'>
                       <p className='font-medium text-xl'>{rest.name}</p>

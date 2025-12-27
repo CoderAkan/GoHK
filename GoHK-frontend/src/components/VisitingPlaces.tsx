@@ -213,7 +213,7 @@ const VisitingPlaces: FC = () => {
             <div> {/* list of hotels and hostels */}
               {places.map((place, index) => (
                 <div key={index} className='flex flex-col min-[1300px]:flex-row mt-5 first:mt-0 border rounded-lg items-stretch border-black/10 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1),0_4px_6px_-1px_rgba(0,0,0,0.1)]'>
-                  <img src={place.image} alt="" className="w-full min-[1300px]:w-100 object-cover rounded-l-lg shrink-0" />
+                  <img src={place.image} alt="" className="w-full min-[1300px]:w-100 min-[1300px]:h-50 object-cover rounded-l-lg shrink-0" />
                   <div className='flex text-xs justify-between mb-4 flex-col mt-4 mx-4 lg:mx-10'>
                     <div className='flex flex-col lg:flex-row justify-start lg:justify-between items-start lg:items-end'>
                       <p className='font-medium text-xl'>{place.name}</p>
