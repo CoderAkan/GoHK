@@ -9,19 +9,19 @@ import train from '../assets/transport/train.png'
 const Transportation: FC = () => {
   return (
     <div className='p-1 h-[70vh] overflow-y-auto'>
-      <div className='w-99/100'>
-        <div className='text-xl font-semibold border-b pb-3 border-black/10'>Transportation</div>
-          <p className="mt-1 text-sm text-gray-600">
+      <div className='w-97/100'>
+        <div className='text-xl font-semibold w-97/100 border-b pb-3 border-black/10'>Transportation</div>
+          <p className="mt-1 text-sm text-gray-600 w-97/100">
             Different transportation options are available from the airport to the city and for getting around the city.          </p>
           <div className='rounded-lg border-black/10 mt-3'>
             <div> {/* types */}
-              <div className='flex justify-between'>
-                <div className='flex flex-col w-1/2 mr-1'>
+              <div className='flex flex-col md:flex-row justify-between'>
+                <div className='flex flex-col w-full md:w-1/2 mr-1'>
                   <div> {/* MTR (Mass Transit Railway) */}
                     <div className='flex shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1),0_4px_6px_-1px_rgba(0,0,0,0.1)] mt-3 items-center gap-x-3 bg-red-300/20 py-2 px-1 rounded-t-lg'>
                       {/* <PiNumberSquareSevenLight className='ml-3' size={30}/> */}
                       <img src={mtr} className='ml-2' alt="" height={30} width={30} />
-                      <p className='text-2xl'>MTR (Mass Transit Railway)</p>
+                      <p className='text-2xl'>MTR</p>
                     </div>
                     <div className='flex flex-col border-b border-x border-black/10 rounded-b-lg p-2'>
                       <div className=' border-black/10'> {/* Top side */}
@@ -127,7 +127,7 @@ const Transportation: FC = () => {
                     </div>
                   </div>
                 </div>
-                <div className='flex flex-col w-1/2 mr-1'>
+                <div className='flex flex-col w-full md:w-1/2 mr-1'>
                   <div> {/* Public buses */}
                     <div className='flex shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1),0_4px_6px_-1px_rgba(0,0,0,0.1)] mt-3 items-center gap-x-3 bg-yellow-500/10 py-2 px-1 rounded-t-lg'>
                       <img src={bus} className='ml-2' alt="" height={30} width={30} />
