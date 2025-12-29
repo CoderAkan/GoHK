@@ -5,15 +5,31 @@ import Transportation from '../../components/Transportation';
 import Hotels from '../../components/Hotels';
 import Food from '../../components/Food';
 import VisitingPlaces from '../../components/VisitingPlaces';
-import { IoIosSearch } from "react-icons/io";
-import { FaSimCard, FaCarSide, FaHotel } from "react-icons/fa";
+import { FaSimCard, FaCarSide, FaHotel, FaSignOutAlt, FaSignInAlt } from "react-icons/fa";
 import { FaBowlFood } from "react-icons/fa6";
 import { GiMountaintop } from "react-icons/gi";
 import { CiCreditCard1 } from "react-icons/ci";
+import { Link, useNavigate } from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { logout } from '../../store/slices/userSlice';
+import { removeTokenFromLocalStorage } from '../../helpers/localstorage.helper';
+import { toast } from 'react-toastify';
 
 const HomePage: FC = () => {
   const [currentStage, setCurrentStage] = useState(0);
-  const stages = ["SIM & Internet", "Octopus", "Transportation", "Accomodation", "Food", "Sights"];
+  const stages = ["SIM & Internet", "Octopus", "Transportation", "Accommodation", "Food", "Sights"];
+
+  const dispatch = useAppDispatch()
+  const navigate = useNavigate()
+  const { access_token } = useAppSelector((state) => state.user)
+  const isAuthenticated = !!access_token
+
+  const logoutHandler = () => {
+    dispatch(logout())
+    removeTokenFromLocalStorage('token')
+    toast.success('You successfully logged out')
+    navigate('/auth');
+  }
 
   const another_stage = (index: number) => {
     setCurrentStage(index);
@@ -32,7 +48,19 @@ const HomePage: FC = () => {
     <div className="flex flex-col m-10 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1),0_4px_6px_-1px_rgba(0,0,0,0.1)] h-[90vh] rounded-lg border border-black/10">
       <div className="flex justify-between items-center font-bold p-5">
         <p className="ml-2 md:ml-5 lg:ml-5 text-md md:text-lg lg:text-xl">HK Trip Planner</p>
-        <IoIosSearch className="text-lg sm:text-xl md:text-2xl lg:text-3xl"/>
+        {isAuthenticated ? (
+          <button className='flex items-center gap-x-2 bg-red-300 text-white hover:bg-red-500 px-2 py-1 rounded-lg' onClick={logoutHandler}>
+            <FaSignOutAlt />
+            <span>Log Out</span>
+          </button>
+        ) : (
+          <Link to="/auth">
+            <button className='flex items-center gap-x-2 bg-green-500 text-white hover:bg-green-600 px-2 py-1 rounded-lg'>
+              <FaSignInAlt />
+              <span>Log In</span>
+            </button>
+          </Link>
+        )}
       </div>
 
       <div className="flex h-full border-t border-black/10">

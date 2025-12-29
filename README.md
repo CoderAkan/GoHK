@@ -17,6 +17,10 @@ write these commands to install necessary libraries and packages:
 - npm i react-toastify
 - npm i react-icons
 - npm i react-rating
+- npm i react-redux
+- npm i axios
+- npm i @react-oauth/google 
+- npm ireact-hook-form
 to run write this command:
 - npm run dev
 

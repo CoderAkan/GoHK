@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "../pages/DefaultPages/Layout";
 import ErrorPage from "../pages/DefaultPages/ErrorPage";
 import HomePage from "../pages/WebPages/HomePage";
-// import AuthPage from "../pages/WebPages/AuthPage"; - it's too early for this
+import AuthPage from "../pages/WebPages/AuthPage";
 
 export const router = createBrowserRouter([
     {
@@ -14,10 +14,10 @@ export const router = createBrowserRouter([
                 index: true, 
                 element: <HomePage />
             },
-            // {
-            //     path: '/auth', - it's too early for this
-            //     element: <AuthPage />
-            // }
+            {
+                path: '/auth', 
+                element: <AuthPage />
+            }
         ]
     }
 ])
