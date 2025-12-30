@@ -28,7 +28,6 @@ const HomePage: FC = () => {
     dispatch(logout())
     removeTokenFromLocalStorage('token')
     toast.success('You successfully logged out')
-    navigate('/auth');
   }
 
   const another_stage = (index: number) => {
