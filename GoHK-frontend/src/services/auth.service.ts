@@ -1,4 +1,4 @@
-import { instance } from './axios'
+import { instance } from '../api/axios'
 
 interface GoogleAuthUrlResponse {
     auth_url: string

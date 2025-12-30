@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { useGoogleLogin } from '@react-oauth/google'
 import SignInButton from '../../components/SignInButton'
-import { authService } from '../../api/auth.service'
+import { authService } from '../../services/auth.service'
 import { useAppDispatch } from '../../store/hooks'
 import { login as loginAction } from '../../store/slices/userSlice'
 

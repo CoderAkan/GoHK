@@ -33,6 +33,10 @@ write these commands to install necessary libraries and packages:
 - python3 -m venv venv
 - source venv/bin/activate
 - pip install flask
+- pip install fastapi
+- pip install uvicorn
+- pip install python-dotenv
+- pip install supabase
 to run (it's early for this yet):
 - uvicorn app.main:app --reload --port 5000
 
