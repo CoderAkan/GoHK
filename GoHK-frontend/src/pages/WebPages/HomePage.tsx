@@ -9,7 +9,7 @@ import { FaSimCard, FaCarSide, FaHotel, FaSignOutAlt, FaSignInAlt } from "react-
 import { FaBowlFood } from "react-icons/fa6";
 import { GiMountaintop } from "react-icons/gi";
 import { CiCreditCard1 } from "react-icons/ci";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { logout } from '../../store/slices/userSlice';
 import { removeTokenFromLocalStorage } from '../../helpers/localstorage.helper';
@@ -20,7 +20,6 @@ const HomePage: FC = () => {
   const stages = ["SIM & Internet", "Octopus", "Transportation", "Accommodation", "Food", "Sights"];
 
   const dispatch = useAppDispatch()
-  const navigate = useNavigate()
   const { access_token } = useAppSelector((state) => state.user)
   const isAuthenticated = !!access_token
 

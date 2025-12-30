@@ -1,13 +1,6 @@
 import { instance } from '../api/axios'
+import type { AuthTokenResponse, GoogleAuthUrlResponse } from '../Types/user'
 
-interface GoogleAuthUrlResponse {
-    auth_url: string
-}
-
-interface AuthTokenResponse {
-    access_token: string
-    refresh_token: string
-}
 
 export const authService = {
     // Get Google OAuth URL from backend
@@ -22,5 +15,5 @@ export const authService = {
             access_token: googleAccessToken
         })
         return data
-    }
+    },
 }
