@@ -16,7 +16,7 @@ import { removeTokenFromLocalStorage } from '../../helpers/localstorage.helper';
 import { toast } from 'react-toastify';
 
 const HomePage: FC = () => {
-  const [currentStage, setCurrentStage] = useState(0);
+  const [currentStage, setCurrentStage] = useState(Number(localStorage.getItem('current_stage')) || 0);
   const stages = ["SIM & Internet", "Octopus", "Transportation", "Accommodation", "Food", "Sights"];
 
   const dispatch = useAppDispatch()
@@ -32,6 +32,7 @@ const HomePage: FC = () => {
 
   const another_stage = (index: number) => {
     setCurrentStage(index);
+    localStorage.setItem('current_stage', index.toString())
   }
 
   const icons = [
