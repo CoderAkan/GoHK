@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from '../store'
 
 interface UserState {
@@ -26,7 +26,7 @@ const userSlice = createSlice({
     name: "user",
     initialState,
     reducers: {
-        login: (state, action) => {
+        login: (state: UserState, action: PayloadAction<UserState>) => {
             state.access_token = action.payload?.access_token
             state.refresh_token = action.payload?.refresh_token
 
@@ -36,7 +36,7 @@ const userSlice = createSlice({
             localStorage.setItem('access_token', access_token)
             localStorage.setItem('refresh_token', refresh_token)
         },
-        logout: (state) => {
+        logout: (state: UserState) => {
             state.access_token = ""
             state.refresh_token = ""
 
