@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field, ConfigDict
-from typing import Optional, List, Literal, Dict, Any
+from typing import Optional, List, Literal, Dict, Any, Union
 from datetime import datetime
 from uuid import UUID
 
@@ -82,7 +82,7 @@ class PlaceCreate(BaseModel):
 
 class PlaceCardResponse(BaseModel):
     """Place card response for API (list view)"""
-    id: UUID
+    id: Union[UUID, int, str]
     name: str
     description: str
     image: str
@@ -96,7 +96,7 @@ class PlaceCardResponse(BaseModel):
 
 class PlaceDetailedResponse(BaseModel):
     """Detailed place response for API"""
-    id: UUID
+    id: Union[UUID, int, str]
     
     # Media
     images: List[str]
@@ -157,7 +157,7 @@ class PlaceInDB(BaseModel):
     """Place model from database"""
     model_config = ConfigDict(from_attributes=True)
     
-    id: UUID
+    id: Union[UUID, int, str]
     name: str
     description: str
     type: PlaceType

@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException, Query, status
-from typing import Optional, List
+from typing import Optional, List, Union
 from uuid import UUID
 
 from models.accommodation import (
@@ -15,6 +15,41 @@ router = APIRouter()
 logger = logging.getLogger(__name__)
 supabase = get_supabase()
 
+def transform_accommodation_data(data: dict) -> dict:
+    """Transform database data to match Pydantic models"""
+    if not data:
+        return data
+        
+    # Map 'img' to 'images' list if 'images' is missing
+    if 'img' in data and ('images' not in data or not data['images']):
+        data['images'] = [data['img']]
+    
+    # Ensure 'images' is a list
+    if 'images' in data and isinstance(data['images'], str):
+        data['images'] = [data['images']]
+    elif 'images' not in data:
+        data['images'] = []
+
+    # Parse 'pros' from PostgreSQL array string if it's a string
+    if 'pros' in data and isinstance(data['pros'], str):
+        pros_str = data['pros']
+        if pros_str.startswith('{') and pros_str.endswith('}'):
+            pros_content = pros_str[1:-1]
+            if pros_content:
+                # Basic split, handle potential quotes if necessary
+                data['pros'] = [p.strip().strip('"') for p in pros_content.split(',')]
+            else:
+                data['pros'] = []
+    
+    # Ensure 'rating' is float
+    if 'rating' in data and data['rating'] is not None:
+        try:
+            data['rating'] = float(data['rating'])
+        except (ValueError, TypeError):
+            data['rating'] = 0.0
+
+    return data
+
 @router.get("/", response_model=AccommodationListResponse)
 async def get_accommodations(
     page: int = Query(1, ge=1),
@@ -23,9 +58,10 @@ async def get_accommodations(
     """Get list of accommodations"""
     try:
         response = supabase.table("GoHK hotel table").select("*").execute()
+        accommodations = [transform_accommodation_data(item) for item in response.data]
         return {
-            "accommodations": response.data,
-            "total": len(response.data),
+            "accommodations": accommodations,
+            "total": len(accommodations),
             "page": page,
             "page_size": page_size
         }
@@ -34,15 +70,15 @@ async def get_accommodations(
         raise HTTPException(status_code=500, detail="Internal server error")
 
 @router.get("/{id}", response_model=AccommodationDetailedResponse)
-async def get_accommodation_detail(id: UUID):
+async def get_accommodation_detail(id: Union[UUID, int, str]):
     """Get detailed accommodation information"""
     response = supabase.table("GoHK hotel table").select("*").eq("id", str(id)).execute()
     if not response.data:
         raise HTTPException(status_code=404, detail="Accommodation not found")
-    return response.data[0]
+    return transform_accommodation_data(response.data[0])
 
 @router.put("/{id}", response_model=AccommodationCardResponse)
-async def update_accommodation(id: UUID, accommodation_update: AccommodationUpdate):
+async def update_accommodation(id: Union[UUID, int, str], accommodation_update: AccommodationUpdate):
     """Update accommodation info"""
     update_data = accommodation_update.model_dump(exclude_unset=True)
     if not update_data:
@@ -55,11 +91,11 @@ async def update_accommodation(id: UUID, accommodation_update: AccommodationUpda
 
     if not response.data:
         raise HTTPException(status_code=404, detail="Accommodation not found")
-
-    return response.data[0]
+    
+    return transform_accommodation_data(response.data[0])
 
 @router.delete("/{id}")
-async def delete_accommodation(id: UUID):
+async def delete_accommodation(id: Union[UUID, int, str]):
     """Delete accommodation"""
     supabase.table("GoHK hotel table") \
         .delete() \
@@ -77,5 +113,5 @@ async def create_accommodation(accommodation_data: AccommodationCreate):
 
     if not response.data:
         raise HTTPException(status_code=400, detail="Failed to create accommodation")
-
-    return response.data[0]
+    
+    return transform_accommodation_data(response.data[0])
