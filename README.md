@@ -26,5 +26,5 @@ write these commands to install necessary libraries and packages:
 - source venv/bin/activate
 - pip install -r requirements.txt
 to run (it's early for this yet):
-- uvicorn app.main:app --reload --port 5000
+- uvicorn main:app --reload --port 5000
 
