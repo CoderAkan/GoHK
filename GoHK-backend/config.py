@@ -11,7 +11,7 @@ class Settings(BaseSettings):
     
     # API
     api_v1_prefix: str = "/api/v1"
-    allowed_origins: list[str] = ["http://localhost:5173", "https://go-hk-hm93.vercel.app/auth"]
+    allowed_origins: list[str] = ["http://localhost:5173", "https://go-hk-hm93.vercel.app"]
     
     # Supabase
     supabase_url: str
