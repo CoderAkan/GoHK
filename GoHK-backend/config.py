@@ -11,7 +11,12 @@ class Settings(BaseSettings):
     
     # API
     api_v1_prefix: str = "/api/v1"
-    allowed_origins: list[str] = ["http://localhost:5173", "https://go-hk-hm93.vercel.app"]
+    allowed_origins: list[str] = [
+        "http://localhost:5173",
+        "https://go-hk-hm93.vercel.app",
+        "https://go-hk.vercel.app",
+        "https://gohk.onrender.com"
+    ]
     
     # Supabase
     supabase_url: str

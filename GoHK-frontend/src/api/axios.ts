@@ -5,7 +5,7 @@ import { login, logout } from "../store/slices/userSlice";
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
 
 export const instance = axios.create({
-    baseURL: API_URL.endsWith('/') ? API_URL : `${API_URL}/`,
+    baseURL: API_URL.replace(/\/$/, ''),
 })
 
 // Request interceptor to add access token to headers
