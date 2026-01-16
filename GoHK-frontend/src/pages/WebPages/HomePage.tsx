@@ -48,13 +48,13 @@ const HomePage: FC = () => {
       <div className="flex justify-between items-center font-bold p-5">
         <p className="ml-2 md:ml-5 lg:ml-5 text-md md:text-lg lg:text-xl">HK Trip Planner</p>
         {isAuthenticated ? (
-          <button className='flex items-center gap-x-2 bg-red-300 text-white hover:bg-red-500 px-2 py-1 rounded-lg' onClick={logoutHandler}>
+          <button className='flex items-center gap-x-2 bg-red-400 text-white hover:bg-red-500 px-3 py-1.5 rounded-lg transition-colors duration-200' onClick={logoutHandler}>
             <FaSignOutAlt />
             <span>Log Out</span>
           </button>
         ) : (
           <Link to="/auth">
-            <button className='flex items-center gap-x-2 bg-green-500 text-white hover:bg-green-600 px-2 py-1 rounded-lg'>
+            <button className='flex items-center gap-x-2 bg-green-500 text-white hover:bg-green-600 px-3 py-1.5 rounded-lg transition-colors duration-200'>
               <FaSignInAlt />
               <span>Log In</span>
             </button>
@@ -63,48 +63,50 @@ const HomePage: FC = () => {
       </div>
 
       <div className="flex h-full border-t border-black/10">
-        <div className="py-5 md:py-1 border-r border-black/10">
+        <div className="py-5 md:py-1 border-r border-black/10 w-20 md:w-48 lg:w-64 transition-all duration-300">
           <div className="relative grid grid-cols-[3rem_auto]">
-            <div className="absolute top-0 h-full w-px bg-gray-300 z-0" style={{ left: '1.95rem' }} />
-
+            <div className="absolute top-0 h-full w-px bg-gray-200 z-0" style={{ left: '1.95rem' }} />
             {stages.map((stage, index) => (
               <div
                 key={index}
                 onClick={() => another_stage(index)}
-                className={`col-span-2 flex items-center py-4 px-2 ${index === currentStage ? 'bg-green-400/10 text-green-700 font-bold' : ''}`}
+                className={`col-span-2 flex items-center py-4 px-2 cursor-pointer transition-all duration-200 ${index === currentStage ? 'bg-green-50 text-green-700 font-bold' : 'hover:bg-gray-50 text-gray-600'}`}
               >
-                <div className="w-12 flex justify-center z-1">
+                <div className="w-12 flex justify-center z-10 transition-transform duration-200 active:scale-90">
                   <div className={`
-                    w-7 h-7 md:w-10 md:h-10 lg:w-12 lg:h-12
-                    rounded-full
-                    flex items-center justify-center
-                    shrink-0
-                    ${index === currentStage
-                      ? 'bg-green-600 text-white'
-                      : 'bg-white border border-green-700 text-green-700'
+                      w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12
+                      rounded-full
+                      flex items-center justify-center
+                      shrink-0
+                      transition-all duration-300 shadow-sm
+                      ${index === currentStage
+                      ? 'bg-green-600 text-white scale-110'
+                      : 'bg-white border border-green-200 text-green-600'
                     }
-                  `}>
+                    `}>
                     {icons[index]}
                   </div>
                 </div>
-                <div className="hidden md:block text-sm lg:text-lg ml-2">
+                <div className="hidden md:block text-sm lg:text-lg ml-3 truncate">
                   {stage}
                 </div>
               </div>
             ))}
           </div>
         </div>
-        <div className="py-2 lg:p-5 flex-1 overflow-auto">
-          {
-            [
-              <ESimAndInternet />,
-              <Octopus />,
-              <Transportation />,
-              <Hotels />,
-              <Food />,
-              <VisitingPlaces />
-            ][currentStage]
-          }
+        <div className="py-2 lg:p-5 flex-1 overflow-auto bg-gray-50/30">
+          <div className="h-full w-full">
+            {
+              [
+                <ESimAndInternet />,
+                <Octopus />,
+                <Transportation />,
+                <Hotels />,
+                <Food />,
+                <VisitingPlaces />
+              ][currentStage]
+            }
+          </div>
         </div>
       </div>
     </div>
