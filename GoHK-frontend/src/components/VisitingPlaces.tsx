@@ -35,7 +35,7 @@ const VisitingPlaces: FC = () => {
   return (
     <div className='p-1 h-[70vh] overflow-y-auto'>
       <div className='w-96/100 md:w-98/100'>
-        <div className='text-xl font-semibold border-b pb-3 border-black/10'>Top Attractions You Can’t Miss</div>
+        <div className='text-xl font-semibold border-b pb-3 border-black/10'>Top Attractions You Can’t Miss!</div>
         <p className="mt-1 text-sm text-gray-600">
           Discover Hong Kong’s iconic spots, where unforgettable views, vibrant culture, and thrilling experiences await every traveler:
         </p>
