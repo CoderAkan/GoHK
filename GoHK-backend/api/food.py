@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException, Query, status
-from typing import Optional, List
+from typing import Optional, List, Union
 from uuid import UUID
 
 from models.food import (
@@ -34,7 +34,7 @@ async def get_food(
         raise HTTPException(status_code=500, detail="Internal server error")
 
 @router.get("/{id}", response_model=FoodDetailedResponse)
-async def get_food_detail(id: UUID):
+async def get_food_detail(id: Union[UUID, int, str]):
     """Get detailed food information"""
     response = supabase.table("GoHK Food").select("*").eq("id", str(id)).execute()
     if not response.data:
@@ -42,7 +42,7 @@ async def get_food_detail(id: UUID):
     return response.data[0]
 
 @router.put("/{id}", response_model=FoodCardResponse)
-async def update_food(id: UUID, food_update: FoodUpdate):
+async def update_food(id: Union[UUID, int, str], food_update: FoodUpdate):
     """Update food/restaurant info"""
     update_data = food_update.model_dump(exclude_unset=True)
     if not update_data:
@@ -59,7 +59,7 @@ async def update_food(id: UUID, food_update: FoodUpdate):
     return response.data[0]
 
 @router.delete("/{id}")
-async def delete_food(id: UUID):
+async def delete_food(id: Union[UUID, int, str]):
     """Delete food/restaurant"""
     supabase.table("GoHK Food") \
         .delete() \

@@ -10,7 +10,12 @@ class Settings(BaseSettings):
     
     # API
     api_v1_prefix: str = "/api/v1"
-    allowed_origins: list[str] = ["http://localhost:5173"]
+    allowed_origins: list[str] = [
+        "http://localhost:5173",
+        "https://go-hk-hm93.vercel.app",
+        "https://go-hk.vercel.app",
+        "https://gohk.onrender.com"
+    ]
     
     # Supabase
     supabase_url: str
@@ -20,7 +25,8 @@ class Settings(BaseSettings):
     # Google OAuth
     google_client_id: str
     google_client_secret: str
-    google_redirect_uri: str = "http://localhost:5000/auth/google/callback"
+    google_redirect_uri: str
+    # google_redirect_uri: str = "http://localhost:5000/auth/google/callback"
     
     # JWT
     jwt_secret_key: str

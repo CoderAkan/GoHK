@@ -12,15 +12,7 @@ Frontend:
 In Terminal (inside proper branch in GoHK):
 - cd GoHK-frontend
 write these commands to install necessary libraries and packages:
-- npm i tailwindcss @tailwindcss/vite
-- npm i react-router-dom
-- npm i react-toastify
-- npm i react-icons
-- npm i react-rating
-- npm i react-redux
-- npm i axios
-- npm i @react-oauth/google 
-- npm ireact-hook-form
+- npm install
 to run write this command:
 - npm run dev
 
@@ -32,11 +24,7 @@ Add another Terminal:
 write these commands to install necessary libraries and packages:
 - python3 -m venv venv
 - source venv/bin/activate
-- pip install flask
-- pip install fastapi
-- pip install uvicorn
-- pip install python-dotenv
-- pip install supabase
+- pip install -r requirements.txt
 to run (it's early for this yet):
-- uvicorn app.main:app --reload --port 5000
+- uvicorn main:app --reload --port 5000
 

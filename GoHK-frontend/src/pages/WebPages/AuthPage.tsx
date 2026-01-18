@@ -81,7 +81,6 @@ const AuthPage: FC = () => {
           {/* Google Sign-In Button */}
           <div className="mb-6">
             <SignInButton
-              type={isSignUp ? "signup" : 'login'}
               onClick={googleLogin}
             />
           </div>

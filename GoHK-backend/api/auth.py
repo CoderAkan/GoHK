@@ -8,7 +8,7 @@ import logging
 router = APIRouter()
 logger = logging.getLogger(__name__)
 
-@router.get("/google")
+@router.get("/google/url")
 async def google_login():
     """Initiate Google OAuth flow"""
     auth_url = google_auth.get_auth_url()

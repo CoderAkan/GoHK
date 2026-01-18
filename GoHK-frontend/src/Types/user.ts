@@ -1,5 +1,9 @@
-export interface IUser {
-    id: number
-    email: string
-    token: string
+export interface GoogleAuthUrlResponse {
+    auth_url: string
 }
+
+export interface AuthTokenResponse {
+    access_token: string
+    refresh_token: string
+}
+

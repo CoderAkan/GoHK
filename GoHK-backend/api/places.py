@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException, Query, status
-from typing import Optional, List
+from typing import Optional, List, Union
 from uuid import UUID
 
 from models.place import (
@@ -39,7 +39,7 @@ async def get_places(
         raise HTTPException(status_code=500, detail="Internal server error")
 
 @router.get("/{id}", response_model=PlaceDetailedResponse)
-async def get_place(id: UUID):
+async def get_place(id: Union[UUID, int, str]):
     """Get detailed place information"""
     response = supabase.table("Visit").select("*").eq("id", str(id)).execute()
     if not response.data:
@@ -47,7 +47,7 @@ async def get_place(id: UUID):
     return response.data[0]
 
 @router.put("/{id}", response_model=PlaceCardResponse)
-async def update_place(id: UUID, place_update: PlaceUpdate):
+async def update_place(id: Union[UUID, int, str], place_update: PlaceUpdate):
     """Update a place"""
     update_data = place_update.model_dump(exclude_unset=True)
     if not update_data:
@@ -64,7 +64,7 @@ async def update_place(id: UUID, place_update: PlaceUpdate):
     return response.data[0]
 
 @router.delete("/{id}")
-async def delete_place(id: UUID):
+async def delete_place(id: Union[UUID, int, str]):
     """Delete a place"""
     supabase.table("Visit") \
         .delete() \

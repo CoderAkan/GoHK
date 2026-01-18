@@ -46,11 +46,15 @@ app = FastAPI(
 # CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins="http://localhost:5173",
+    allow_origins=settings.allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.api_route("/", methods=["GET", "HEAD"])
+async def root():
+    return {"message": f"Welcome to {settings.app_name} API", "version": settings.app_version}
 
 # Health check
 @app.get("/health")

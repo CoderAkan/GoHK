@@ -2,11 +2,10 @@ import { type FC } from 'react'
 import { FcGoogle } from 'react-icons/fc'
 
 interface SignInButtonProps {
-    type: 'login' | 'signup'
     onClick: () => void
 }
 
-const SignInButton: FC<SignInButtonProps> = ({ type, onClick }) => {
+const SignInButton: FC<SignInButtonProps> = ({ onClick }) => {
     return (
         <button
             onClick={onClick}

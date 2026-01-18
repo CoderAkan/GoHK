@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field, ConfigDict
-from typing import Optional, List, Literal
+from typing import Optional, List, Literal, Union
 from datetime import datetime
 from uuid import UUID
 
@@ -81,7 +81,7 @@ class AccommodationCreate(BaseModel):
 
 class AccommodationCardResponse(BaseModel):
     """Accommodation card response for API"""
-    id: UUID
+    id: Union[UUID, int, str]
     images: List[str]
     name: str
     address: str
@@ -94,7 +94,7 @@ class AccommodationCardResponse(BaseModel):
 
 class AccommodationDetailedResponse(BaseModel):
     """Accommodation detailed response for API"""
-    id: UUID
+    id: Union[UUID, int, str]
     images: List[str]
     videos: Optional[str] = None
     name: str
@@ -137,7 +137,7 @@ class AccommodationInDB(BaseModel):
     """Accommodation model from database"""
     model_config = ConfigDict(from_attributes=True)
     
-    id: UUID
+    id: Union[UUID, int, str]
     name: str
     address: str
     description: str

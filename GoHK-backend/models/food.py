@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field, ConfigDict
-from typing import Optional, List, Literal, Dict, Any
+from typing import Optional, List, Literal, Dict, Any, Union
 from datetime import datetime
 from uuid import UUID
 
@@ -87,7 +87,7 @@ class FoodCreate(BaseModel):
 
 class FoodCardResponse(BaseModel):
     """Food card response for API (list view)"""
-    id: UUID
+    id: Union[UUID, int, str]
     image: str
     name: str
     description: str
@@ -101,7 +101,7 @@ class FoodCardResponse(BaseModel):
 
 class FoodDetailedResponse(BaseModel):
     """Detailed food/restaurant response for API"""
-    id: UUID
+    id: Union[UUID, int, str]
     images: List[str]
     videos: Optional[List[str]] = None
     name: str
@@ -131,7 +131,7 @@ class FoodInDB(BaseModel):
     """Food/Restaurant model from database"""
     model_config = ConfigDict(from_attributes=True)
     
-    id: UUID
+    id: Union[UUID, int, str]
     name: str
     address: str
     description: str
@@ -157,6 +157,6 @@ class FoodListResponse(BaseModel):
 
 class FoodPartResponse(BaseModel):
     """Response for a specific part of food/restaurant info"""
-    id: UUID
+    id: Union[UUID, int, str]
     type: str
     data: Any
