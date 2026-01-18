@@ -94,7 +94,7 @@ const VisitingPlaces: FC = () => {
                         </div>
                       </div>
                       <div className='text-lg lg:text-xl text-green-700'>
-                        {place.entry_fee}
+                        {place.entry_fee == "0" ? "Free" : `$${place.entry_fee} HKD`}
                       </div>
                     </div>
                   </div>
