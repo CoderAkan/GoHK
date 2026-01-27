@@ -1,11 +1,4 @@
-Main branch is - main
-Akan's branch is - forAkan
-Iman's branch is - forIman
-Shad's branch is - forShad
-In Terminal: (Inside GoHK, not frontend or backend)
-- git branch branch_name
-Example:
-- git branch forAkan
+
 
 
 Frontend:
